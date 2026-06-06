@@ -1,9 +1,8 @@
-import { useState } from "react";
-
 import styles from "./counter.module.css";
+import { useCounter } from "../../context/counter-provider/use-counter";
 
 export function Counter() {
-  const [counter, setCounter] = useState(0);
+  const { counter, setCounter } = useCounter();
 
   const handleIncrement = () => {
     setCounter(counter + 1);

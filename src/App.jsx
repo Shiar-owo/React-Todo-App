@@ -1,5 +1,9 @@
-import { Counter } from "./components/counter/counter";
+import { Clock } from "./components/clock/clock";
 
 export function App() {
-  return <Counter />;
+  return (
+    <>
+      <Clock />
+    </>
+  );
 }
