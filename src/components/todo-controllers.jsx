@@ -15,7 +15,7 @@ export function TodoControllers({ task, setTask, addTodo }) {
         onKeyDown={handleKeyDown}
         placeholder="Escribe tu tarea..."
       />
-      <button className={styles.button} onClick={addTodo}>Agregar</button>
+      <button className={styles.button} onClick={addTodo}>+ Agregar</button>
     </div>
   );
 }

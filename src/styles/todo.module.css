@@ -51,7 +51,7 @@
   border: none;
   color: var(--text-secondary);
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.6;
   transition: opacity var(--transition), color var(--transition), background-color var(--transition);
   display: flex;
   align-items: center;
@@ -62,8 +62,8 @@
 }
 
 .iconBtn svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
 
 .todoItem:hover .iconBtn {
