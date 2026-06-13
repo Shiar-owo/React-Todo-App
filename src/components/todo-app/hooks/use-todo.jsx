@@ -19,6 +19,19 @@ export function useTodo() {
     setTask("");
   };
 
+  const toggleComplete = (id) => {
+    setTodos(todos.map((t) => (t.id === id ? { ...t, complete: !t.complete } : t)));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((t) => t.id !== id));
+  };
+
+  const editTodo = (id, newText) => {
+    if (!newText.trim()) return;
+    setTodos(todos.map((t) => (t.id === id ? { ...t, text: newText } : t)));
+  };
+
   return {
     task,
     setTask,
@@ -27,5 +40,8 @@ export function useTodo() {
     noTodos,
 
     addTodo,
+    toggleComplete,
+    deleteTodo,
+    editTodo,
   };
 }

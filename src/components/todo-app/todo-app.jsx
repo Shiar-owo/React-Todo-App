@@ -3,7 +3,7 @@ import { useTodo } from "./hooks/use-todo";
 import { TodoControllers } from "./todo-controllers";
 
 export function TodoApp() {
-  const { task, setTask, addTodo, todos, noTodos } = useTodo();
+  const { task, setTask, addTodo, todos, noTodos, toggleComplete, deleteTodo, editTodo } = useTodo();
 
   return (
     <div>
@@ -15,7 +15,13 @@ export function TodoApp() {
       {!noTodos && (
         <ul>
           {todos.map((todo) => (
-            <Todo todo={todo} />
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onToggleComplete={toggleComplete}
+              onDelete={deleteTodo}
+              onEdit={editTodo}
+            />
           ))}
         </ul>
       )}
