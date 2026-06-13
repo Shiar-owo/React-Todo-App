@@ -1,7 +1,7 @@
 import { Todo } from "./todo";
 import { useTodo } from "./hooks/use-todo";
 import { TodoControllers } from "./todo-controllers";
-import styles from "./todo-app.module.css";
+import styles from "../styles/todo-app.module.css";
 
 export function TodoApp() {
   const { task, setTask, addTodo, todos, noTodos, toggleComplete, deleteTodo, editTodo } = useTodo();

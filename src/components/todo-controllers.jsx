@@ -1,4 +1,4 @@
-import styles from "./todo-controllers.module.css";
+import styles from "../styles/todo-controllers.module.css";
 
 export function TodoControllers({ task, setTask, addTodo }) {
   const handleKeyDown = (e) => {

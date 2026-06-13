@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import styles from "./todo.module.css";
+import styles from "../styles/todo.module.css";
 
 export function Todo({ todo, onToggleComplete, onDelete, onEdit }) {
   const [isEditing, setIsEditing] = useState(false);
