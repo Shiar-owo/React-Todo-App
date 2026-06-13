@@ -1,12 +1,20 @@
 :root {
-  --slate-900: oklch(20.8% 0.042 265.755);
-  --slate-950: oklch(12.9% 0.042 264.695);
-  --slate-800: oklch(25% 0.042 265.755);
-  --slate-700: oklch(35% 0.042 265.755);
-  --slate-400: oklch(55% 0.02 265.755);
-  --rose-700: oklch(51.4% 0.222 16.935);
-  --olive-200: oklch(93% 0.007 106.5);
-  --transition: 150ms ease;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-surface: #18181f;
+  --bg-elevated: #1f1f28;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.1);
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --danger: #ef4444;
+  --danger-glow: rgba(239, 68, 68, 0.2);
+  --success: #22c55e;
+  --transition: 200ms ease;
 }
 
 *,
@@ -31,11 +39,27 @@ body {
     "Helvetica Neue",
     sans-serif;
 
-  color: var(--olive-200);
-  background-color: var(--slate-900);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::placeholder {
-  color: var(--slate-400);
+  color: var(--text-muted);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 3px;
 }

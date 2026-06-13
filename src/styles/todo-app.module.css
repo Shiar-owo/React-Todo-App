@@ -2,28 +2,66 @@
   max-width: 480px;
   margin: 60px auto;
   padding: 32px;
-  background-color: var(--slate-950);
-  border-radius: 14px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
 }
 
 .heading {
   font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
   text-align: center;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   margin-top: 16px;
 }
 
 .emptyState {
   text-align: center;
-  color: var(--slate-400);
+  color: var(--text-muted);
   margin-top: 24px;
   font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.counterDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pending .counterDot {
+  background-color: var(--accent);
+}
+
+.completed .counterDot {
+  background-color: var(--success);
+}
+
+.counterValue {
+  font-weight: 600;
+  color: var(--text-primary);
 }

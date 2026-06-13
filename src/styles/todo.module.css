@@ -3,18 +3,18 @@
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: background-color var(--transition);
 }
 
 .todoItem:hover {
-  background-color: var(--slate-800);
+  background-color: var(--bg-surface);
 }
 
 .checkbox {
   width: 16px;
   height: 16px;
-  accent-color: var(--slate-400);
+  accent-color: var(--accent);
   cursor: pointer;
 }
 
@@ -32,34 +32,42 @@
 
 .editInput {
   flex: 1;
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-size: 14px;
   font-family: inherit;
-  background-color: var(--slate-800);
-  border: 1px solid var(--slate-700);
-  border-radius: 6px;
-  color: var(--olive-200);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text-primary);
   outline: none;
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-.editInput:focus {
-  border-color: var(--slate-400);
-}
-
-.deleteBtn {
+.iconBtn {
   background: none;
   border: none;
-  color: var(--slate-400);
-  font-size: 16px;
+  color: var(--text-muted);
   cursor: pointer;
   opacity: 0;
-  transition: opacity var(--transition), color var(--transition);
+  transition: opacity var(--transition), color var(--transition), background-color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
 }
 
-.todoItem:hover .deleteBtn {
+.todoItem:hover .iconBtn {
   opacity: 1;
 }
 
+.editBtn:hover {
+  color: var(--accent);
+  background-color: var(--bg-elevated);
+}
+
 .deleteBtn:hover {
-  color: var(--rose-700);
+  color: var(--danger);
+  background-color: var(--danger-glow);
 }
