@@ -1,14 +1,23 @@
 :root {
   --slate-900: oklch(20.8% 0.042 265.755);
   --slate-950: oklch(12.9% 0.042 264.695);
+  --slate-800: oklch(25% 0.042 265.755);
+  --slate-700: oklch(35% 0.042 265.755);
+  --slate-400: oklch(55% 0.02 265.755);
   --rose-700: oklch(51.4% 0.222 16.935);
   --olive-200: oklch(93% 0.007 106.5);
+  --transition: 150ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-
   font-family:
     system-ui,
     -apple-system,
@@ -24,4 +33,9 @@ body {
 
   color: var(--olive-200);
   background-color: var(--slate-900);
+  line-height: 1.5;
+}
+
+::placeholder {
+  color: var(--slate-400);
 }

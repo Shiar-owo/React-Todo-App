@@ -1,0 +1,29 @@
+.container {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 32px;
+  background-color: var(--slate-950);
+  border-radius: 14px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--slate-400);
+  margin-top: 24px;
+  font-size: 14px;
+}

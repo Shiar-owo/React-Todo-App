@@ -23,8 +23,9 @@ export function Todo({ todo, onToggleComplete, onDelete, onEdit }) {
   };
 
   return (
-    <li className={todo.complete ? styles.completed : ""}>
+    <li className={`${styles.todoItem} ${todo.complete ? styles.completed : ""}`}>
       <input
+        className={styles.checkbox}
         type="checkbox"
         checked={todo.complete}
         onChange={() => onToggleComplete(todo.id)}
@@ -40,7 +41,9 @@ export function Todo({ todo, onToggleComplete, onDelete, onEdit }) {
           onKeyDown={handleKeyDown}
         />
       ) : (
-        <span onDoubleClick={handleDoubleClick}>{todo.text}</span>
+        <span className={styles.text} onDoubleClick={handleDoubleClick}>
+          {todo.text}
+        </span>
       )}
       <button className={styles.deleteBtn} onClick={() => onDelete(todo.id)}>
         ×
