@@ -1,16 +1,93 @@
-# React + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacion de tareas sencilla construida con React y Vite. Tema oscuro, interfaz limpia y funcional.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 8
+- CSS Modules
+- ESLint
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Agregar tareas (botón o Enter)
+- Editar tareas (íziz pencil)
+- Eliminar tareas (ícono X)
+- Marcar como completada (checkbox)
+- Contador de tareas pendientes y terminadas
+- Tema oscuro
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+yarn install
+```
+
+## Scripts
+
+```bash
+yarn dev      # Servidor de desarrollo
+yarn build    # Build de producción
+yarn lint     # Ejecutar ESLint
+yarn preview  # Vista previa del build
+```
+
+## Estructura del proyecto
+
+```
+src/
+  main.jsx                    # Punto de entrada
+  App.jsx                     # Componente raíz
+  components/
+    todo-app.jsx              # Contenedor principal
+    todo.jsx                  # Item de tarea
+    todo-controllers.jsx      # Input + botón agregar
+    hooks/
+      use-todo.jsx            # Lógica de estado y CRUD
+  styles/
+    global.css                # Variables del tema oscuro, resets
+    todo-app.module.css       # Estilos del contenedor y footer
+    todo.module.css           # Estilos del item y iconos
+    todo-controllers.module.css # Estilos del input y botón
+```
+
+## Arquitectura
+
+### Jerarquía de componentes
+
+```
+<main.jsx>
+  └── <App>
+        └── <TodoApp>              ← useTodo() hook
+              ├── <TodoControllers>
+              ├── <Todo /> ×n
+              └── footer (contadores)
+```
+
+### Estado (useTodo hook)
+
+| Estado | Tipo | Descripción |
+|--------|------|-------------|
+| `task` | `string` | Valor actual del input |
+| `todos` | `Array<{id, text, complete}>` | Lista de tareas |
+
+### Funciones expuestas
+
+| Función | Descripción |
+|---------|-------------|
+| `addTodo()` | Crea tarea desde el input |
+| `toggleComplete(id)` | Alterna estado completado |
+| `deleteTodo(id)` | Elimina tarea por id |
+| `editTodo(id, newText)` | Actualiza texto de la tarea |
+
+### Variables CSS
+
+| Variable | Valor | Uso |
+|----------|-------|-----|
+| `--bg-primary` | `#0a0a0f` | Fondo de página |
+| `--bg-secondary` | `#111118` | Fondo de tarjeta |
+| `--bg-surface` | `#18181f` | Fondo de item |
+| `--accent` | `#6366f1` | Color acento (índigo) |
+| `--danger` | `#ef4444` | Rojo para eliminar |
+| `--success` | `#22c55e` | Verde para completado |
